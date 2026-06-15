@@ -9,8 +9,8 @@ def load_faq_data():
     documents = []
     url_prefix = 'https://datatalks.club/faq'
     for course in courses_raw:
-        course_url = f"{url_prefix}{course["path"]}"
-        course_response = response.get(course_url)
+        course_url = f'{url_prefix}{course["path"]}'
+        course_response = requests.get(course_url)
         document = course_response.json()
         documents.extend(document)
         
